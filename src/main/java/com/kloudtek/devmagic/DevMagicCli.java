@@ -11,7 +11,7 @@ import java.util.ServiceLoader;
 
 @Command(name = "devmagic", showDefaultValues = true)
 public class DevMagicCli extends CliCommand<DevMagicCli> {
-    private final CliHelper cliHelper = new CliHelper(this);
+    private final CliHelper cliHelper = new CliHelper(() -> DevMagicCli.this);
     private static final ArrayList<DevMagicPluginCommand> plugins = new ArrayList<>();
     private static final ArrayList<CliCommand<?>> subCommands = new ArrayList<>();
     @Option(names = {"-o", "--output"}, description = "Output format")
